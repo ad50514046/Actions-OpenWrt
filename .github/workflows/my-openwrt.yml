@@ -61,7 +61,7 @@ jobs:
         df -hT $PWD
         # git clone $REPO_URL -b $REPO_BRANCH openwrt
         # 以下内容测试
-        git clone $REPO_URL -b
+        git clone $REPO_URL
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: Load custom feeds
@@ -123,7 +123,7 @@ jobs:
         name: OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: openwrt/bin
 
-    - name: Organize files
+    - name: Organize 文件
       id: organize
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
