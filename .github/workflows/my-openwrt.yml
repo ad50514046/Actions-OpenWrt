@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build OpenWrt
+name: My OpenWrt
 
 on:
   repository_dispatch:
@@ -54,11 +54,14 @@ jobs:
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
 
+# 下载openwrt
     - name: Clone source code
       working-directory: /workdir
       run: |
         df -hT $PWD
-        git clone $REPO_URL -b $REPO_BRANCH openwrt
+        # git clone $REPO_URL -b $REPO_BRANCH openwrt
+        # 以下内容测试
+        git clone $REPO_URL -b
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: Load custom feeds
