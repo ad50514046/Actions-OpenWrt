@@ -54,7 +54,7 @@ jobs:
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
 
-# 下载openwrt
+    # 下载openwrt
     - name: Clone source code
       working-directory: /workdir
       run: |
